@@ -1,0 +1,22 @@
+[package]
+authors = ["Ivan Nejgebauer <inejge@gmail.com>"]
+categories = ["development-tools", "development-tools::cargo-plugins"]
+description = "Reads Cargo.lock and prints all cached package versions not mentioned inside."
+documentation = "https://github.com/inejge/cargo-cleanup/blob/master/README.md"
+homepage = "https://github.com/inejge/cargo-cleanup"
+keywords = ["cargo", "cargo-subcommand", "cli", "cache", "cleanup"]
+license = "Apache-2.0/MIT"
+name = "cargo-cleanup"
+readme = "README.md"
+repository = "https://github.com/inejge/cargo-cleanup"
+version = "0.1.0"
+
+[[bin]]
+name = "cargo-cleanup"
+path = "src/main.rs"
+
+[dependencies]
+serde = "1.0.80"
+serde_derive = "1.0.80"
+toml = "0.4.8"
+walkdir = "2.2.5"
