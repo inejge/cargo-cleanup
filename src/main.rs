@@ -32,14 +32,20 @@ fn main() -> Result<(), Box<Error>> {
     let file = BufReader::new(file);
 
     let mut package = String::new();
+    let mut in_package = false;
     let mut version_map = HashMap::new();
     for line in file.lines() {
         let line = line?;
         if &line == "[[package]]" {
             package.clear();
+            in_package = true;
+            continue;
+        }
+        if !in_package {
             continue;
         }
         if &line == "" {
+            in_package = false;
             let one_package: Package = toml::from_str(&package)?;
             match one_package.source {
                 None => continue,
