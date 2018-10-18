@@ -9,7 +9,7 @@ license = "Apache-2.0/MIT"
 name = "cargo-cleanup"
 readme = "README.md"
 repository = "https://github.com/inejge/cargo-cleanup"
-version = "0.1.1"
+version = "0.1.2"
 
 [[bin]]
 name = "cargo-cleanup"
