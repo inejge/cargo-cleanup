@@ -28,7 +28,6 @@ fn main() -> Result<(), Box<Error>> {
     args.next().ok_or("cargo")?;
     args.next().ok_or("cleanup")?;
     let file = args.next().unwrap_or(String::from("Cargo.lock"));
-    println!("{}", file);
     let file = File::open(file)?;
     let file = BufReader::new(file);
 
